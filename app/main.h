@@ -31,6 +31,14 @@
 //串口透传需要引用的头文件
 #include "my_ble_uarts.h"
 
+//DFU需要引用的头文件
+#include "nrf_dfu_ble_svci_bond_sharing.h"
+#include "nrf_svci_async_function.h"
+#include "nrf_svci_async_handler.h"
+#include "nrf_power.h"
+#include "ble_dfu.h"
+#include "nrf_bootloader_info.h"
+
 #if defined (UART_PRESENT)
 #include "nrf_uart.h"
 #endif
@@ -40,8 +48,8 @@
 #include "app_uart.h"
 
 
-#define PROJECT_SW_VERSION        		"V-Hw01.01.00-Fw01.00.01"
-#define DEVICE_NAME                     "BLE_UartApp"                      // 设备名称字符串 
+#define PROJECT_SW_VERSION        		"V-Hw01.01.00-Fw01.00.03"
+#define DEVICE_NAME                     "FYZ_DFU_BLE"                      // 设备名称字符串 
 #define UARTS_SERVICE_UUID_TYPE         BLE_UUID_TYPE_VENDOR_BEGIN         // 串口透传服务UUID类型：厂商自定义UUID
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(100, UNIT_1_25_MS)   // 最小连接间隔 (0.1 秒) 
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(200, UNIT_1_25_MS)   // 最大连接间隔 (0.2 秒) 

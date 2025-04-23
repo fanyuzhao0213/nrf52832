@@ -96,6 +96,15 @@
 .\objects\uart.o: ..\..\components\ble\ble_link_ctx_manager\ble_link_ctx_manager.h
 .\objects\uart.o: ..\..\components\ble\common\ble_conn_state.h
 .\objects\uart.o: ..\..\components\libraries\atomic\nrf_atomic.h
+.\objects\uart.o: ..\..\components\libraries\bootloader\ble_dfu\nrf_dfu_ble_svci_bond_sharing.h
+.\objects\uart.o: ..\..\components\libraries\svc\nrf_svci.h
+.\objects\uart.o: ..\..\components\libraries\svc\nrf_svci_async_function.h
+.\objects\uart.o: ..\..\components\libraries\svc\nrf_svci_async_handler.h
+.\objects\uart.o: ..\..\components\libraries\svc\nrf_svc_function.h
+.\objects\uart.o: ..\..\components\libraries\bootloader\dfu\nrf_dfu_types.h
+.\objects\uart.o: ..\..\modules\nrfx\hal\nrf_power.h
+.\objects\uart.o: ..\..\components\ble\ble_services\ble_dfu\ble_dfu.h
+.\objects\uart.o: ..\..\components\libraries\bootloader\nrf_bootloader_info.h
 .\objects\uart.o: ..\..\modules\nrfx\hal\nrf_uart.h
 .\objects\uart.o: ..\..\modules\nrfx\hal\nrf_uarte.h
 .\objects\uart.o: ..\..\components\libraries\uart\app_uart.h
