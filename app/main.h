@@ -39,6 +39,9 @@
 #include "ble_dfu.h"
 #include "nrf_bootloader_info.h"
 
+//FDS需要引用的头文件
+#include "fds.h"
+
 #if defined (UART_PRESENT)
 #include "nrf_uart.h"
 #endif
@@ -48,7 +51,7 @@
 #include "app_uart.h"
 
 
-#define PROJECT_SW_VERSION        		"V-Hw01.01.00-Fw01.00.03"
+#define PROJECT_SW_VERSION        		"V-Hw01.01.00-Fw01.00.04"
 #define DEVICE_NAME                     "FYZ_DFU_BLE"                      // 设备名称字符串 
 #define UARTS_SERVICE_UUID_TYPE         BLE_UUID_TYPE_VENDOR_BEGIN         // 串口透传服务UUID类型：厂商自定义UUID
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(100, UNIT_1_25_MS)   // 最小连接间隔 (0.1 秒) 
@@ -79,6 +82,11 @@ extern uint16_t  m_ble_uarts_max_data_len;
 extern bool 	uart_enabled;
 //该变量用于保存连接句柄，初始值设置为无连接
 extern uint16_t m_conn_handle; 
+
+
+/*数据*/
+extern char sensor_ble_code[16];
+extern char sensor_password[16];
 
 
 extern void my_ble_send(uint8_t* data, uint16_t len, uint16_t conn_handle);

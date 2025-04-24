@@ -13,6 +13,11 @@
 
 #include "main.h"
 #include "uart.h"
+#include "my_fds.h"
+
+char sensor_ble_code[16]= "ABCDEFFYZ1234567";
+char sensor_password[16]= "2025042412001234";
+
 
 BLE_UARTS_DEF(m_uarts, NRF_SDH_BLE_TOTAL_LINK_COUNT);    //定义名称为m_uarts的串口透传服务实例
 NRF_BLE_GATT_DEF(m_gatt);                                //定义名称为m_gatt的GATT模块实例
@@ -604,6 +609,7 @@ int main(void)
 	
 	uart_config();	//初始化串口
 	timers_init();	//初始化APP定时器
+	my_flash_init();
 	leds_init();	//出使唤按键和指示灯
 	power_management_init();	//初始化电源管理
 	ble_stack_init();	//初始化协议栈
@@ -618,6 +624,7 @@ int main(void)
 	NRF_LOG_INFO("[MAIN] DEVICE_NAME : %s",DEVICE_NAME);  
 	
 	advertising_start();//启动广播
+//	fds_once_storage(WRITE_ID_CONFIG_INFO);
 	//主循环
 	while(true)
 	{

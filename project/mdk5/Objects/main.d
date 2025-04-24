@@ -104,7 +104,9 @@
 .\objects\main.o: ..\..\modules\nrfx\hal\nrf_power.h
 .\objects\main.o: ..\..\components\ble\ble_services\ble_dfu\ble_dfu.h
 .\objects\main.o: ..\..\components\libraries\bootloader\nrf_bootloader_info.h
+.\objects\main.o: ..\..\components\libraries\fds\fds.h
 .\objects\main.o: ..\..\modules\nrfx\hal\nrf_uart.h
 .\objects\main.o: ..\..\modules\nrfx\hal\nrf_uarte.h
 .\objects\main.o: ..\..\components\libraries\uart\app_uart.h
 .\objects\main.o: ..\..\app\uart\uart.h
+.\objects\main.o: ..\..\app\fds\my_fds.h

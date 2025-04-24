@@ -1,0 +1,18 @@
+#
+*.*
+Makefile
+#
+!*.c
+!*.h
+!*.s
+!*.lib
+!/picture/*
+!XCOM V2.0.exe
+#arm5_no_packs/
+!*.uvoptx
+!*.uvprojx
+!.gitignore
+!/README.md
+!*.md
+!*.zip
+!*.axf
